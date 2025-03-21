@@ -1,0 +1,135 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: #fff;
+}
+
+header {
+    background-color: #1f1f1f;
+    padding: 20px;
+    text-align: center;
+}
+
+.header-itens {
+    padding: 5px 20%;
+}
+
+header h1 {
+   text-align: left; 
+   color: white;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: right;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    padding: 15%;
+}
+
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #31326d;
+    border-radius: 10px;
+    color: #121212;
+}
+
+h1, h2, h3 {
+    color: rgb(168, 168, 168);
+    font-family: "Poppins", sans-serif;
+}
+
+.learn-more-button {
+    background-color: blue; 
+    color: white; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px;
+}
+
+article {
+    font-family: "Poppins", sans-serif;
+    margin: 20px;
+}
+
+footer {
+    display: flex; 
+    justify-content: space-around;
+    background-color: #1f1f1f;
+    text-align: left;
+    padding: 300px 0%;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.evolution-title {
+    margin: 300px 30px 20px 30px; 
+    font-size: 4em;
+    color: rgb(255, 255, 255);
+}
+
+.fa {
+    color: white; 
+    font-size: 24px; 
+    margin: 0 10px; 
+    text-decoration: none;
+}
+
+.initial-image {
+    text-align: right;
+}
+
+.description-text {
+    color: #535353;
+    font-family: "Poppins", sans-serif;
+}
+
+#timeline {
+    display: flex;
+    justify-content: center;
+    margin: 3em;
+}
+
+.main-button {
+    background-color: blue; 
+    color: rgb(161, 161, 161); 
+    padding: 20px 30px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+}
+
+.topic-section {
+    padding: 15%;
+}
+
+.links {
+    color: white;
+    text-decoration: none;
+}
+
+.more-details {
+    padding: 30% 20%;
+}
