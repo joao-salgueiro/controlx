@@ -1,29 +1,27 @@
 {% load static %}
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>History of Gaming Controls</title>
+    <title>{{ title }}</title>
     <link rel="stylesheet" href="{% static 'styles/style.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
+
+
 <body>
-    
     {% include "partials/header.html" %}
     
-    <main style="display: flex; align-items: center; justify-content: space-between;">
-        <div style="flex: 1; padding: 20px;">
-            <h1>Gaming Controllers</h1>
-            <h2>About This Blog</h2>
-            <p class="description-text">Explore the evolution of gaming controllers, from the early arcade sticks to modern ergonomic designs.</p>
-            <a class="learn-more-button" href="{% url 'learn_more' %}">Learn More</a>
-        </div>
-        <div style="flex: 1; display: flex; justify-content: flex-end;">
-            <img class="initial-image" src="{% static 'photos/control-night.jpg' %}" alt="controller-banner" style="max-width: 100%; height: auto;">
-        </div>
-    </main>
+    <div class="controller_detail_article">
+
+        <h1>{{ title }}</h1>
+        <p>{{ description }}</p>
+        <img src="{{ image }}" alt="{{ title }}">
+    </div>
     
     <div class="topic-section">
         <h2 class="evolution-title">Gaming Controller Evolution</h2>
@@ -44,9 +42,9 @@
             </article>
         </section>
     </div>
-    
-    
-    {% include "partials/footer.html" %}
 
 </body>
+
+{% include "partials/footer.html" %}
+
 </html>
