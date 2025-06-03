@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
             name='GamingController',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('year', models.IntegerField(unique=True)),
+                ('year', models.IntegerField(unique=True, blank=True)),
                 ('title', models.CharField(max_length=200)),
                 ('description', models.TextField()),
                 ('image', models.ImageField(upload_to='photos/')),

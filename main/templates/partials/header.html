@@ -1,12 +1,22 @@
 <header>
     <div class="header-itens">
-        <h1><a href="/" class="links">ControlX</a></h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#timeline">Timeline</a></li>
-                <li><a href="#footer">Contact</a></li>
-            </ul>
-        </nav>
+        <div>
+            <h1><a href="/" class="links">ControlX</a></h1>
+        </div>
+       <div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'learn_more' %}">About</a></li>
+                    <li><a href="#timeline">Timeline</a></li>
+                    <li><a href="#footer">Contact</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a href="new_post" class="new_post_button">New post</a></li>
+                    <a href="{% url 'account_logout' %}" class="login-button">Logout</a>
+                    {% else %}
+                    <a href="/accounts/google/login/?process=login" class="login-button">Login com Google</a>
+                    {% endif %}                    
+                </ul>
+            </nav>
+       </div>
     </div>
 </header>

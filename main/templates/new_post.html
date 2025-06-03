@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn More</title>
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+{% include "partials/header.html" %}
+<body>
+    <form action="{% url 'new_post' %}" class='default_form' method="post" enctype="multipart/form-data">
+        <h1>New post info's</h1>
+        {% csrf_token %}
+
+        <label for="id_name" class="new_post_labels">Name:</label><br>
+        <input type="text" name="title" id="id_name"><br><br>
+
+        <label for="id_description" class="new_post_labels">Description:</label><br>
+        <textarea name="description" id="id_description" maxlength="300" oninput="updateCharCount()"></textarea><br><br>
+        <p><span id="charCount">0</span>/300 caracteres</p>
+        <script>
+            function updateCharCount() {
+                const textarea = document.getElementById('id_description');
+                const count = document.getElementById('charCount');
+                count.textContent = textarea.value.length;
+            }
+        </script>
+
+        <label for="id_image" class="new_post_labels">Image:</label><br>
+        <input type="file" name="image" id="id_image"><br><br>
+
+        <button type="submit" class="post_button">Post</button>
+    </form>
+</body>
+</html>

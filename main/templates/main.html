@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn More</title>
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+{% include "partials/header.html" %}
+
+<body>
+    {%for post in posts %}
+    <div class="post_main">
+        <p><strong>{{ post.user.username }}</strong> postou:</p>
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.description }}</p>
+        {% if post.image %}
+            <img class="main-controller-image" src="{{ post.image.url }}" alt="{{ posts.title }}">
+        {%endif%}
+    </div>
+    {% empty %}
+    <p>Nenhum post encontrado.</p>
+    {%endfor %}
+    
+    {% include "partials/footer.html" %}
+
+</body>
+</html>

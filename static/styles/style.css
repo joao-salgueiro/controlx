@@ -1,5 +1,4 @@
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #000000;
@@ -10,10 +9,13 @@ header {
     background-color: #1f1f1f;
     padding: 20px;
     text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .header-itens {
-    padding: 5px 20%;
+    display: flex;
+    padding: 5px 5%;
+    justify-content: space-between;
 }
 
 header h1 {
@@ -55,6 +57,10 @@ h1, h2, h3 {
     font-family: "Poppins", sans-serif;
 }
 
+a {
+    text-decoration: none;
+}
+
 .learn-more-button {
     background-color: blue; 
     color: white; 
@@ -63,6 +69,8 @@ h1, h2, h3 {
     border-radius: 5px; 
     cursor: pointer; 
     font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    
 }
 
 article {
@@ -79,12 +87,14 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .evolution-title {
     margin: 300px 30px 20px 30px; 
     font-size: 4em;
     color: rgb(255, 255, 255);
+    font-family: "Poppins", sans-serif;
 }
 
 .fa {
@@ -99,7 +109,7 @@ footer {
 }
 
 .description-text {
-    color: #535353;
+    color: #696969;
     font-family: "Poppins", sans-serif;
 }
 
@@ -130,11 +140,82 @@ footer {
     text-decoration: none;
 }
 
+.links:hover {
+
+    color:rgb(12, 76, 194);
+    transition: 0.5s;
+}
+
 .more-details {
     padding: 10% 20%;
+    font-family: "Poppins", sans-serif;
+    
 }
 
 .controller_detail_article{
     margin: 10% 20% 1% 20%;
     letter-spacing: 2px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    color: #9b9999;
+}
+
+.post_main{
+    padding: 1em;
+    margin: 10% 20% 1% 20%;
+    letter-spacing: 2px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    color: #9b9999;
+    background-color: #292929;
+}
+
+.main-controller-image {
+    max-width: 70%;
+}
+
+.login-button {
+    background-color: rgb(23, 23, 77); 
+    color: white; 
+    padding: 10px 10px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    margin: 0.8em;
+}
+
+.post_button {
+    background-color: rgb(23, 23, 77); 
+    color: white; 
+    padding: 1em 2em; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 1em;
+    font-family: "Poppins", sans-serif;
+}
+
+.new_post_button {
+    background-color: rgb(223, 120, 35); 
+    color: white; 
+    padding: 5px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    margin: 0.8em;
+}
+
+.default_form {
+    display: block;
+    text-align: left;
+    margin: 0% 25%;
+}
+
+.new_post_labels {
+    display: block;
+    font-family: "Poppins", sans-serif;
 }
