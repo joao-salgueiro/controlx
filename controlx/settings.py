@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-u3@%#$(2_fi48117^9nkhgwo!l^fo2#i4e+c+fl1)nd0xw0tgo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'True'
 
-ALLOWED_HOSTS = ['.onrender.com', "controlx-blog.onrender.com"]
+ALLOWED_HOSTS = ['.onrender.com', "controlx-blog.onrender.com", "127.0.0.1"]
 
 
 # Application definition
@@ -93,11 +93,18 @@ WSGI_APPLICATION = 'controlx.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default='postgres://controlx_db_user:IyLYYvd0u9ENAv6vg4aRZEafuHiMezHa@dpg-abcd1234abcd1234abcd-a.oregon-postgres.render.com:5432/controlx_db',
-        conn_max_age=600,
-        ssl_require=True
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'controlx_db',
+        'USER': 'controlx_db_user',
+        'PASSWORD': 'IyLYYvd0u9ENAv6vg4aRZEafuHiMezHa',
+        'HOST': 'dpg-d0voo42li9vc73d3ol8g-a.oregon-postgres.render.com',
+        'PORT': '5432',
+        'OPTIONS': {
+            'sslmode': 'require',  # força usar SSL (Render exige)
+        },
+        'CONN_MAX_AGE': 600,  # tempo de conexão persistente (em segundos)
+    }
 }
 
 
