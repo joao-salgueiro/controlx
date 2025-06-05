@@ -1,3 +1,5 @@
+from django.http import HttpResponse
+from django.contrib.sites.models import Site
 from django.shortcuts import redirect, render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -44,6 +46,11 @@ def new_post(request):
             messages.error(request, 'Error creating post. Please try again.')
             return redirect('new_post')
     return render(request, 'new_post.html', {'form': form})
+
+def listar_sites(request):
+    sites = Site.objects.all()
+    output = "\n".join([f"ID: {site.id} - Domain: {site.domain}" for site in sites])
+    return HttpResponse(f"<pre>{output}</pre>")
 
 
 def edit_post(request, post_id):

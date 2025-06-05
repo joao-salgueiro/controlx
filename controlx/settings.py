@@ -182,4 +182,11 @@ SOCIALACCOUNT_PROVIDERS = {
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-SITE_ID = 1
+hostname = os.environ.get('HOSTNAME', '')
+
+if 'joao.attecnologia' in hostname:
+    SITE_ID = 2
+elif 'onrender' in hostname:
+    SITE_ID = 3
+else:
+    SITE_ID = 5 #Local development
