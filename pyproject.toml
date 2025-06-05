@@ -22,7 +22,7 @@ dependencies = [
 name = "controlx"         
 version = "0.1.0"        
 description = "Description"  
-authors = joaopssalgueiro jpsalgueiro.dev@gmail.com  # obrigatório
+authors = ["João Salgueiro <jpsalgueiro.dev@gmail.com>"]
 packages = [{include = "controlx", from = "src"}]
 
 [tool.poetry.dependencies]
