@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-u3@%#$(2_fi48117^9nkhgwo!l^fo2#i4e+c+fl1)nd0xw0tgo'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+DEBUG = 'True'
 
 ALLOWED_HOSTS = ['.onrender.com']
 
@@ -94,9 +94,9 @@ WSGI_APPLICATION = 'controlx.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.getenv("DATABASE_URL"),
+        default='postgres://controlx_db_user:IyLYYvd0u9ENAv6vg4aRZEafuHiMezHa@dpg-abcd1234abcd1234abcd-a.oregon-postgres.render.com:5432/controlx_db?")',
         conn_max_age=600,
-        ssl_require=True  # <- ESSENCIAL para Render
+        ssl_require=True  # <- Render
     )
 }
 
