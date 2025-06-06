@@ -7,13 +7,13 @@ class GamingControllerForm(forms.ModelForm):
         model = GamingController
         fields = ['title', 'description', 'image']
         widgets = {
-            'title': forms.TextInput(attrs={'placeholder': 'Digite o título'}),
-            'description': forms.Textarea(attrs={'placeholder': 'Escreva a descrição', 'rows': 4}),
+            'title': forms.TextInput(attrs={'placeholder': 'Title'}),
+            'description': forms.Textarea(attrs={'placeholder': 'Description', 'rows': 4}),
             'image': forms.FileInput(),
         }
 
         def clean_description(self):
             desc = self.cleaned_data.get('description')
             if len(desc) > 300:
-                raise forms.ValidationError("A descrição não pode ter mais de 300 caracteres.")
+                raise forms.ValidationError("Max 300.")
             return desc

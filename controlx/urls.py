@@ -25,7 +25,7 @@ from controlx import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
-    path('main', views.all_posts, name='all_posts'),
+    path('main', views.all_posts, name='main'),
     path('learn_more', views.learn_more, name='learn_more'),
     path('controller/<int:year>/', views.gamming_controller_detail, name='controller_detail'),
     path('new_post/', views.new_post, name='new_post'),

@@ -12,7 +12,7 @@ def home(request):
 
 def all_posts(request):
     posts = GamingController.objects.all().order_by('-id')
-
+    
     return render(request, 'main.html', {
         "posts": posts
     })

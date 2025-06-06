@@ -162,7 +162,7 @@ footer {
 
 .post_main{
     padding: 1em;
-    margin: 10% 20% 1% 20%;
+    margin: 5% 30%;
     letter-spacing: 2px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 20px;
@@ -218,4 +218,9 @@ footer {
 .new_post_labels {
     display: block;
     font-family: "Poppins", sans-serif;
+}
+
+.profile_header {
+    display: flex;
+    align-items: center;
 }

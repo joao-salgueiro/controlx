@@ -16,17 +16,25 @@
 <body>
     {%for post in posts %}
     <div class="post_main">
-        <p><strong>{{ post.user.username }}</strong> postou:</p>
+        <div class="profile_header">
+            <img src="{{ post.user.profile.profile_picture }}" style="width: 40px; border-radius: 50%;" alt="Foto de perfil">
+            <a style="margin-left: 0.8em; margin-right: 0.4em;">{{ post.user.username }}</a>
+        </div>
         <h1>{{ post.title }}</h1>
-        <p>{{ post.description }}</p>
+        <h2>{{ post.post_time }}</h2>
         {% if post.image %}
-            <img class="main-controller-image" src="{{ post.image.url }}" alt="{{ posts.title }}">
+            <div>
+                <img class="main-controller-image" src="{{ post.image.url }}" style="width: 25em;" alt="{{ posts.title }}">
+            </div>
         {%endif%}
+        <p>{{ post.description }}</p>
     </div>
     {% empty %}
-    <p>Nenhum post encontrado.</p>
+    <p>Nenhum post encontrado.</p> -->
     {%endfor %}
+
     
+
     {% include "partials/footer.html" %}
 
 </body>
