@@ -3,8 +3,6 @@
 **CONTROLX** is a blog-style web project built with **Django**, focused on showcasing the history and evolution of gaming controllers.  
 This project is also a personal challenge aimed at improving my skills in Django, Python, and basic database management.
 
-🔗 **Live Demo**: [https://controlx.joao.attecnologia.com.br/](https://controlx.joao.attecnologia.com.br/)
-
 ---
 
 ## 🚀 Features
