@@ -20,17 +20,17 @@
             <img src="{{ post.user.profile.profile_picture }}" style="width: 40px; border-radius: 50%;" alt="Foto de perfil">
             <a style="margin-left: 0.8em; margin-right: 0.4em;">{{ post.user.username }}</a>
         </div>
-        <h1>{{ post.title }}</h1>
-        <h2>{{ post.post_time }}</h2>
+        <h1 class="post_title">{{ post.title }}</h1>
+        <h2 class="post_time">{{ post.post_time }}</h2>
         {% if post.image %}
             <div>
-                <img class="main-controller-image" src="{{ post.image.url }}" style="width: 25em;" alt="{{ posts.title }}">
+                <img class="main-controller-image" src="{{ post.image.url }}" style="width: 30%; height: 30%;" alt="{{ posts.title }}">
             </div>
         {%endif%}
         <p>{{ post.description }}</p>
     </div>
     {% empty %}
-    <p>Nenhum post encontrado.</p> -->
+    <p>Nenhum post encontrado.</p> 
     {%endfor %}
 
     

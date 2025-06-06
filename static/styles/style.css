@@ -165,7 +165,6 @@ footer {
     margin: 5% 30%;
     letter-spacing: 2px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 20px;
     color: #9b9999;
     background-color: #292929;
 }
@@ -224,3 +223,37 @@ footer {
     display: flex;
     align-items: center;
 }
+
+.post_title {
+    font-size: 36px; /* Default size for PCs */
+  }
+  
+  .post_title {
+    font-size: 36px; /* PCs */
+  }
+  
+  .post_time {
+    font-size: 12px; /* PCs */
+  }
+  
+  /* Tablets (entre 600px e 1024px) */
+  @media (max-width: 1024px) {
+    .post_title {
+      font-size: 28px;
+    }
+  
+    .post_time {
+      font-size: 9px;
+    }
+  }
+  
+  /* Celulares (até 600px) */
+  @media (max-width: 600px) {
+    .post_title {
+      font-size: 22px;
+    }
+  
+    .post_time {
+      font-size: 5px;
+    }
+  }

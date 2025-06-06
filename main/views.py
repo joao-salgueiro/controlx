@@ -40,7 +40,7 @@ def new_post(request):
             post.user = request.user
             post.save()
             messages.success(request, 'Post created successfully!')
-            return redirect('home')
+            return redirect('main')
         
         else :
             messages.error(request, 'Error creating post. Please try again.')
