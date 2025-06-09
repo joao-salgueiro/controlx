@@ -10,27 +10,26 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+import json
 import os
 import dj_database_url
 from pathlib import Path
 from dotenv import load_dotenv
 
-load_dotenv()
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+load_dotenv(dotenv_path=BASE_DIR / ".env")
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-u3@%#$(2_fi48117^9nkhgwo!l^fo2#i4e+c+fl1)nd0xw0tgo'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'True'
 
-ALLOWED_HOSTS = ['.onrender.com', "controlx-blog.onrender.com", "127.0.0.1"]
+ALLOWED_HOSTS=["127.0.0.1", "controlx-blog.onrender.com", "controlx.joao.attecnologia.com.br"]
 
 
 # Application definition
@@ -43,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
+    'texts',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -95,15 +95,13 @@ WSGI_APPLICATION = 'controlx.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'controlx_db',
-        'USER': 'controlx_db_user',
-        'PASSWORD': 'IyLYYvd0u9ENAv6vg4aRZEafuHiMezHa',
-        'HOST': 'dpg-d0voo42li9vc73d3ol8g-a.oregon-postgres.render.com',
-        'PORT': '5432',
-        'OPTIONS': {
-            'sslmode': 'require',  # força usar SSL (Render exige)
-        },
-        'CONN_MAX_AGE': 600,  # tempo de conexão persistente (em segundos)
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT'),
+        'OPTIONS': {'sslmode': 'require'},
+        'CONN_MAX_AGE': 600,
     }
 }
 

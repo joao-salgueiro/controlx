@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn More</title>
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+{% include "partials/header.html" %}
+
+<body>
+    <div class="more-details">
+        <h1>Learn More</h1>
+        <p>{{ text }}</p>
+        <a href="/" class="links">Back to Home</a>
+    </div>
+    <div class="topic-section">
+        <h2 class="evolution-title">Gaming Controller Evolution</h2>
+
+        <section id="timeline">
+            <br>
+            <article>
+                <h3><a class="links" href="{% url 'controller_detail' 1970 %}">1970s - The Beginning</a></h3>
+            </article>
+            <article>
+                <h3><a class="links" href="{% url 'controller_detail' 1980 %}">1980s - The Console Revolution</a></h3>
+            </article>
+            <article>
+                <h3><a class="links" href="{% url 'controller_detail' 1990 %}">1990s - Analog Sticks and More</a></h3>
+            </article>
+            <article>
+                <h3><a class="links" href="{% url 'controller_detail' 2000 %}">2000s-Present - Wireless and Innovation</a></h3>
+            </article>
+        </section>
+    </div>
+    
+
+    {% include "partials/footer.html" %}
+
+</body>
+</html>

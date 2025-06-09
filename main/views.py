@@ -13,12 +13,10 @@ def home(request):
 def all_posts(request):
     posts = GamingController.objects.all().order_by('-id')
     
-    return render(request, 'main.html', {
+    return render(request, 'feed.html', {
         "posts": posts
     })
 
-def learn_more(request):
-    return render(request, 'learn_more.html')
 
 def gamming_controller_detail(request, year):
 
@@ -40,7 +38,7 @@ def new_post(request):
             post.user = request.user
             post.save()
             messages.success(request, 'Post created successfully!')
-            return redirect('main')
+            return redirect('feed')
         
         else :
             messages.error(request, 'Error creating post. Please try again.')

@@ -15,6 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from main import views
+from texts import views
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
@@ -25,11 +26,5 @@ from controlx import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
-    path('main', views.all_posts, name='main'),
-    path('learn_more', views.learn_more, name='learn_more'),
-    path('controller/<int:year>/', views.gamming_controller_detail, name='controller_detail'),
-    path('new_post/', views.new_post, name='new_post'),
-    path('edit_post/<int:post_id>/', views.edit_post, name='edit_post'),
-    path('delete_post/<int:post_id>/', views.delete_post, name='delete_post'),
-    path('listar-sites/', views.listar_sites),
+    path('learn_more/', views.learn_more, name='learn_more')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
